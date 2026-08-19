@@ -30,7 +30,10 @@ body{font-family:'Montserrat',sans-serif;background:#fffcf8;color:#4a3b2a;overfl
 </div>
 
 <button class="music" id="btnM" onclick="toggleM()">♫</button>
-<audio id="audio" loop preload="auto" src="musica.mp3"></audio>
+<audio id="audio" loop preload="auto" playsinline>
+<source src="musica.mp3" type="audio/mpeg">
+<source src="./musica.mp3" type="audio/mpeg">
+</audio>
 
 <div class="hero">
 <div>
