@@ -12,10 +12,14 @@ body{font-family:Montserrat,sans-serif;background:#fdf8f4;color:#5a4a42;text-ali
 #sobre.abierto{transform:translateY(-100%)}
 .cir{width:130px;height:130px;background:#c9a88a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.5rem;margin-bottom:20px}
 h1{font-family:'Great Vibes',cursive;font-size:3rem;color:#b08968}
-.btn{margin-top:20px;padding:14px 28px;border:none;border-radius:30px;background:#b08968;color:#fff;font-size:1rem}
+.btn{margin-top:20px;padding:14px 28px;border:none;border-radius:30px;background:#b08968;color:#fff;font-size:1rem;cursor:pointer}
 .cont{padding:40px 20px;max-width:500px;margin:auto}
-.foto{width:90%;border-radius:20px;margin:20px 0}
-.whats{display:inline-block;background:#25D366;color:#fff;padding:16px 28px;border-radius:30px;text-decoration:none;font-weight:600;margin-top:20px}
+.card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 20px rgba(0,0,0,.05);margin:20px 0}
+.count{display:flex;justify-content:center;gap:8px;margin:20px 0}
+.num{background:#fff;width:70px;padding:12px;border-radius:12px;box-shadow:0 5px 10px rgba(0,0,0,.05)}
+.num b{display:block;font-size:1.6rem;color:#b08968}
+.mapa{display:inline-block;margin-top:12px;padding:10px 22px;background:#b08968;color:#fff;border-radius:20px;text-decoration:none;font-size:.9rem;font-weight:600}
+.whats{display:inline-block;background:#25D366;color:#fff;padding:16px 28px;border-radius:30px;text-decoration:none;font-weight:600;margin-top:25px}
 #btnM{position:fixed;bottom:20px;right:20px;z-index:50;width:50px;height:50px;border-radius:50%;border:none;background:#b08968;color:#fff;font-size:22px}
 </style>
 </head>
@@ -24,39 +28,54 @@ h1{font-family:'Great Vibes',cursive;font-size:3rem;color:#b08968}
 <div id="sobre">
 <div class="cir">A & J</div>
 <h1>Alfredo & Jackeline</h1>
-<p style="font-size:1.3rem;letter-spacing:2px">31 • 10 • 2026</p>
-<p style="margin-top:10px;opacity:.7">Tenemos el honor de invitarte</p>
+<p style="letter-spacing:3px;margin-top:5px">31 • 10 • 2026</p>
 <button class="btn" onclick="abrirSobre()">ABRIR INVITACIÓN ♡</button>
 </div>
 
-<div style="padding:40px 20px;max-width:500px;margin:auto">
-<h2 style="font-family:'Great Vibes';font-size:2.8rem;color:#b08968;margin-top:30px">Nuestra Boda</h2>
-<p style="margin:20px 0">Con la bendición de Dios y el amor que nos une, queremos que nos acompañen en este día tan especial</p>
-<p style="font-size:1.5rem;margin:20px 0"><b>31 de Octubre de 2026</b></p>
-<img src="foto.jpg" style="width:90%;max-width:400px;border-radius:20px;margin:20px 0">
-<h2 style="font-family:'Great Vibes';font-size:2rem;margin:40px 0">Más que Invitados</h2>
-<p>Ustedes son parte de nuestra historia</p>
+<div class="cont">
+<h1 style="font-family:'Great Vibes';font-size:3rem;margin-top:20px;color:#b08968">¡Nos Casamos!</h1>
+<p style="margin:10px 0 5px">Faltan para el gran día:</p>
+<div class="count" id="countdown"></div>
 
-<a href="https://wa.me/5215528551249?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Alfredo%20y%20Jackeline%20el%2031%20de%20octubre%20de%202026%20%E2%9C%A8" style="display:inline-block;background:#25D366;color:#fff;padding:16px 28px;border-radius:30px;text-decoration:none;font-weight:600;margin-top:30px">Confirmar por WhatsApp</a>
-<p style="font-size:.8rem;opacity:.7;margin-top:20px">Carta para ti: Te llegará directo a tu WhatsApp</p>
+<div class="card">
+<h3>⛪ CEREMONIA</h3>
+<p style="margin:12px 0;line-height:1.5"><b>Parroquia San José<br>Chicoloapan</b><br>6:00 PM</p>
+<a class="mapa" href="https://maps.app.goo.gl/xNeVY2F1bz4BA9nz6" target="_blank">📍 Ver ubicación</a>
+</div>
+
+<div class="card">
+<h3>🎉 RECEPCIÓN</h3>
+<p style="margin:12px 0;line-height:1.5"><b>Salón Hacienda La Palma</b><br>7:30 PM</p>
+<a class="mapa" href="https://maps.app.goo.gl/NFDPShJjeF56ysaR9" target="_blank">📍 Ver ubicación</a>
+</div>
+
+<img src="foto.jpg" style="width:92%;border-radius:20px;margin:25px 0;box-shadow:0 10px 20px rgba(0,0,0,.1)">
+
+<br>
+<a class="whats" href="https://wa.me/5215528551249?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Alfredo%20y%20Jackeline%20el%2031%20de%20octubre%20de%202026%20✨" target="_blank">Confirmar por WhatsApp</a>
 </div>
 
 <audio id="audio" loop><source src="musica.mp3" type="audio/mpeg"></audio>
 <button id="btnM" onclick="toggleM()">♫</button>
 
 <script>
-let play=false;
 function abrirSobre(){
- document.getElementById('sobre').classList.add('abierto');
- let a=document.getElementById('audio');a.volume=0.8;a.load();
- a.play().then(()=>{play=true;document.getElementById('btnM').innerText='||'}).catch(()=>{});
+document.getElementById('sobre').classList.add('abierto');
+let a=document.getElementById('audio');a.volume=0.8;a.play().then(()=>{son=true;document.getElementById('btnM').innerText='||'}).catch(()=>{});
 }
+let son=false;
 function toggleM(){
- let a=document.getElementById('audio');
- if(play){a.pause();play=false;document.getElementById('btnM').innerText='♫';}
- else{a.play();play=true;document.getElementById('btnM').innerText='||';}
+let a=document.getElementById('audio');
+if(son){a.pause();son=false;document.getElementById('btnM').innerText='♫';}
+else{a.play();son=true;document.getElementById('btnM').innerText='||';}
 }
+const target=new Date('2026-10-31T18:00:00').getTime();
+setInterval(()=>{
+let now=new Date().getTime();let d=target-now;
+if(d<0){document.getElementById('countdown').innerHTML='<b>¡Hoy es el gran día!</b>';return;}
+let dias=Math.floor(d/(1000*60*60*24));let hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));let min=Math.floor((d%(1000*60*60))/(1000*60));let sec=Math.floor((d%(1000*60))/1000);
+document.getElementById('countdown').innerHTML=`<div class="num"><b>${dias}</b>Días</div><div class="num"><b>${hrs}</b>Hrs</div><div class="num"><b>${min}</b>Min</div><div class="num"><b>${sec}</b>Seg</div>`;
+},1000);
 </script>
 </body>
 </html>
-
