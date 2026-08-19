@@ -58,14 +58,12 @@ body{font-family:'Montserrat',sans-serif;background:#fffcf8;color:#4a3b2a;overfl
 let play=false;
 function abrirInvitacion(){
 document.getElementById('sobre').classList.add('abierto');
-let a=document.getElementById('audio');a.volume=0.8;
-a.play().then(()=>{play=true;document.getElementById('btnM').innerHTML='❚❚'}).catch(()=>{play=false;});
+let a=document.getElementById('audio');a.volume=0.8;a.load();
+a.play().then(()=>{play=true;document.getElementById('btnM').innerHTML='❚❚';}).catch(()=>{});
 }
 function toggleM(){
 let a=document.getElementById('audio');
-if(play){a.pause();document.getElementById('btnM').innerHTML='♫';play=false}
-else{a.play();document.getElementById('btnM').innerHTML='❚❚';play=true}
+if(play){a.pause();play=false;document.getElementById('btnM').innerHTML='♫';}
+else{a.load();a.play();play=true;document.getElementById('btnM').innerHTML='❚❚';}
 }
 </script>
-</body>
-</html>
