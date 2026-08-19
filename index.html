@@ -1,68 +1,95 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alfredo & Jackeline - 31 Oct 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boda Alfredo & Jackeline</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Montserrat,sans-serif;background:#fdf8f4;color:#5a4a42;text-align:center}
-#sobre{position:fixed;inset:0;background:#fdf8f4;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:0.8s}
-#sobre.abierto{transform:translateY(-100%)}
-.cont{padding:20px;max-width:500px;margin:auto}
-.card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.07);margin:20px 0;border:1px solid #f2e6d8}
-.count{display:flex;justify-content:center;gap:8px;margin:18px 0}
-.num{background:#fff;width:72px;padding:12px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,.06)}
-.num b{display:block;font-size:1.7rem;color:#b08968}
-.mapa{display:inline-block;margin-top:12px;padding:12px 26px;background:#b08968;color:#fff;border-radius:25px;text-decoration:none;font-weight:700}
-.whats{display:inline-block;background:#25D366;color:#fff;padding:16px 30px;border-radius:30px;text-decoration:none;font-weight:700;margin-top:20px}
-#btnM{position:fixed;bottom:20px;right:20px;z-index:50;width:52px;height:52px;border-radius:50%;border:none;background:#b08968;color:#fff;font-size:22px}
+body { margin:0; font-family: serif; background-color: #58181F; color: #F9E6C8; text-align: center; }
+.seccion { padding: 60px 20px; }
+.foto-novios { width: 85%; max-width: 350px; border-radius: 20px; border: 3px solid #E8C39E; }
+.titulo { font-family: cursive; font-size: 34px; color: #E8C39E; margin-bottom: 15px;}
+.boton { background: #E8C39E; color: #58181F; padding: 12px 28px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;}
+#cuenta { font-size: 26px; letter-spacing: 2px; margin-top: 15px; font-weight: bold;}
 </style>
 </head>
 <body>
 
-<div id="sobre">
-<div style="width:130px;height:130px;background:#c9a88a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.5rem;margin-bottom:18px">A & J</div>
-<h1 style="font-family:'Great Vibes';font-size:3.4rem;color:#b08968">Alfredo & Jackeline</h1>
-<p style="letter-spacing:3px;margin-top:4px">31 • 10 • 2026</p>
-<p style="opacity:.6;margin-top:8px">Tenemos el honor de invitarte</p>
-<button style="margin-top:22px;padding:14px 30px;border:none;border-radius:30px;background:#b08968;color:#fff;font-size:1rem" onclick="abrirSobre()">ABRIR INVITACIÓN ♡</button>
+<!-- 1. FRASE DE BIENVENIDA -->
+<div class="seccion" style="height: 90vh; display:flex; flex-direction:column; justify-content:center;">
+  <p style="font-size:13px; letter-spacing:2px; opacity:0.9; margin-bottom:15px; line-height:1.6;">
+    CON LA BENDICIÓN DE DIOS, NUESTROS PADRES<br>Y EL AMOR DE NUESTRA FAMILIA
+  </p>
+  <p style="font-size:45px; margin:10px 0;">💍</p>
+  <h2 style="font-style: italic; font-family: cursive; font-size: 23px; line-height: 1.5; max-width:330px; margin: 0 auto;">
+    "Hay momentos especiales por sí solos, pero compartirlos con ustedes los hace inolvidables"
+  </h2>
+  <p style="font-size: 16px; margin-top: 25px; line-height: 1.4; max-width: 300px; margin-left: auto; margin-right: auto; color: #E8C39E;">
+    Te invito a celebrar conmigo en este día tan especial para mí
+  </p>
+  <p style="letter-spacing: 5px; margin-top:35px; font-size:16px; font-weight:bold;">ALFREDO & JACKELINE</p>
+  <p style="font-size:11px; opacity:0.5; margin-top:40px;">↓ desliza ↓</p>
 </div>
 
-<div class="cont">
-<h1 style="font-family:'Great Vibes';font-size:3.2rem;color:#b08968;margin-top:10px">¡Nos Casamos!</h1>
-<p style="margin-top:6px">Faltan para el gran día:</p>
-<div class="count" id="countdown"></div>
-
-<div class="card">
-<h3 style="color:#b08968">⛪ CEREMONIA RELIGIOSA</h3>
-<p style="margin:12px 0;line-height:1.5"><b>Parroquia San José<br>Chicoloapan</b><br>Hora: 6:00 PM</p>
-<a class="mapa" href="https://maps.app.goo.gl/xNeVY2F1bz4BA9nz6" target="_blank">📍 Ver Iglesia</a>
+<!-- 2. FOTO DE NOVIOS -->
+<div class="seccion" style="background-color: #FFF8F0; color: #58181F;">
+  <h2 class="titulo" style="color:#58181F;">¡Nos Casamos!</h2>
+  <img src="foto.jpg" class="foto-novios">
+  <p style="margin-top:25px; font-size:20px;">31 de Octubre de 2026</p>
 </div>
 
-<div class="card">
-<h3 style="color:#b08968">🎉 RECEPCIÓN</h3>
-<p style="margin:12px 0;line-height:1.5"><b>Salón Hacienda La Palma</b><br>Hora: 7:30 PM</p>
-<a class="mapa" href="https://maps.app.goo.gl/NFDPShJjeF56ysaR9" target="_blank">📍 Ver Salón</a>
+<!-- 3. CUENTA REGRESIVA -->
+<div class="seccion">
+  <h2 class="titulo">Faltan</h2>
+  <div id="cuenta">Cargando...</div>
+  <p style="font-size:14px; opacity:0.8;">para nuestro gran día</p>
 </div>
 
-<img src="foto.jpg" style="width:100%;border-radius:22px;margin:20px 0;box-shadow:0 12px 24px rgba(0,0,0,.12)">
-
-<h2 style="font-family:'Great Vibes';font-size:2.8rem;margin-top:10px">Más que Invitados</h2>
-<p style="margin:10px 0 5px;opacity:.7">Ustedes son parte de nuestra historia</p>
-<a class="whats" href="https://wa.me/5215528551249?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Alfredo%20y%20Jackeline%20el%2031%20de%20octubre%20de%202026%20✨" target="_blank">Confirmar por WhatsApp</a>
-<p style="font-size:.75rem;opacity:.5;margin:15px 0 30px">Tu confirmación llegará directo a nuestro WhatsApp</p>
+<!-- 4. PADRINOS -->
+<div class="seccion" style="background-color: #FFF8F0; color: #58181F;">
+  <h2 class="titulo" style="color:#58181F;">Nuestros Padrinos</h2>
+  <p style="font-size: 22px; line-height: 1.5; margin-top:15px;">
+    Eduardo Navarrete<br>&<br>Patricia Hernández
+  </p>
 </div>
 
-<audio id="audio" loop><source src="musica.mp3" type="audio/mpeg"></audio>
-<button id="btnM" onclick="toggleM()">♫</button>
+<!-- 5. MISA -->
+<div class="seccion">
+  <p style="font-size:40px;">⛪</p>
+  <h2 class="titulo">Ceremonia Religiosa</h2>
+  <p>Parroquia San José Chicoloapan</p>
+  <p style="font-size:20px;"><b>6:00 PM</b></p>
+  <a class="boton" href="https://maps.google.com/?q=Parroquia+San+Jose+Chicoloapan" target="_blank">Ver Ubicación</a>
+</div>
+
+<!-- 6. RECEPCIÓN -->
+<div class="seccion" style="background-color: #FFF8F0; color: #58181F;">
+  <p style="font-size:40px;">🎉</p>
+  <h2 class="titulo" style="color:#58181F;">Recepción</h2>
+  <p>Salón Hacienda La Palma</p>
+  <p style="font-size:20px;"><b>7:30 PM</b></p>
+  <a class="boton" style="background:#58181F; color:#fff;" href="https://maps.google.com/?q=Hacienda+La+Palma" target="_blank">Ver Ubicación</a>
+</div>
+
+<!-- 7. FRASE FINAL -->
+<div class="seccion" style="padding-bottom: 80px;">
+  <p style="font-size:30px;">🕊️</p>
+  <p style="font-style: italic; font-size: 18px; line-height:1.5; max-width:300px; margin: 20px auto 0 auto; color:#E8C39E;">
+    "En memoria de quienes nos cuidan desde el cielo, su amor vive eternamente en nuestros corazones"
+  </p>
+  <p style="margin-top:40px; letter-spacing:4px; font-size:13px;">¡TE ESPERAMOS!</p>
+</div>
 
 <script>
-function abrirSobre(){document.getElementById('sobre').classList.add('abierto');let a=document.getElementById('audio');a.volume=0.8;a.play().then(()=>{son=true;document.getElementById('btnM').innerText='||'}).catch(()=>{});}
-let son=false;function toggleM(){let a=document.getElementById('audio');if(son){a.pause();son=false;document.getElementById('btnM').innerText='♫';}else{a.play();son=true;document.getElementById('btnM').innerText='||';}}
-const target=new Date('2026-10-31T18:00:00').getTime();
-setInterval(()=>{let n=new Date().getTime();let d=target-n;if(d<0){document.getElementById('countdown').innerHTML='<b>¡Hoy es el gran día!</b>';return;}let dias=Math.floor(d/(1000*60*60*24));let hrs=Math.floor((d%(1000*60*60*24))/(1000*60*60));let min=Math.floor((d%(1000*60*60))/(1000*60));let sec=Math.floor((d%(1000*60))/1000);document.getElementById('countdown').innerHTML=`<div class="num"><b>${dias}</b>Días</div><div class="num"><b>${hrs}</b>Hrs</div><div class="num"><b>${min}</b>Min</div><div class="num"><b>${sec}</b>Seg</div>`;},1000);
+var fechaBoda = new Date("Oct 31, 2026 18:00:00").getTime();
+setInterval(function() {
+  var ahora = new Date().getTime();
+  var distancia = fechaBoda - ahora;
+  var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+  var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  if(distancia < 0){ document.getElementById("cuenta").innerHTML = "¡Hoy es el gran día!"; } 
+  else { document.getElementById("cuenta").innerHTML = dias + " días " + horas + " hrs"; }
+}, 1000);
 </script>
 </body>
 </html>
