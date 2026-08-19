@@ -1,2 +1,68 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Alfredo & Jackeline</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Montserrat,sans-serif;background:#fdf8f4;text-align:center}#sobre{position:fixed;inset:0;background:#fdf8f4;z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:1s}.abierto{transform:translateY(-100%)}.cir{width:120px;height:120px;background:#c9a88a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px}.hero{height:100vh;position:relative;display:flex;align-items:end;justify-content:center;padding-bottom:70px;color:#fff}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent)}.hero-content{position:relative;z-index:2}.hero h1{font-family:Great Vibes,cursive;font-size:70px}.btn{background:#c9a88a;color:#fff;padding:12px 28px;border-radius:30px;text-decoration:none;display:inline-block;margin-top:15px}.contador{display:flex;justify-content:center;gap:8px}.contador div{background:#fff;padding:10px;border-radius:12px;min-width:65px}.card{background:#fff;margin:15px auto;max-width:460px;padding:25px;border-radius:20px}</style></head><body><div id="sobre"><div class="cir">♥</div><h1 style="font-family:Great Vibes,cursive;color:#c9a88a;font-size:48px;margin-top:20px">Alfredo & Jackeline</h1><button class="btn" onclick="document.getElementById('sobre').classList.add('abierto');document.getElementById('m').play()">ABRIR INVITACIÓN</button></div><audio id="m" loop src="https://cdn.pixabay.com/download/audio/2022/06/07/audio_b9bd4170e8.mp3"></audio><div class="hero"><img src="foto.jpg"><div class="hero-content"><p>NOS CASAMOS</p><h1>Alfredo<br>& Jackeline</h1><p>31 • OCTUBRE • 2026</p></div></div><div style="padding:50px 20px"><p><i>"Juntamos nuestras vidas, nuestros sueños y nuestras locuras, para ser uno mismo."</i></p></div><div style="background:#f6efe8;padding:30px"><div class="contador" id="c"></div></div><div style="padding:20px"><div class="card"><h2>Iglesia</h2><p>Parroquia San José Chicoloapan<br>5:40 PM</p><a class="btn" href="https://maps.google.com/?q=Parroquia+San+Jose+Chicoloapan" target="_blank">VER UBICACIÓN</a></div><div class="card"><h2>Fiesta</h2><p>Hacienda La Palma</p><a class="btn" href="https://maps.google.com/?q=Hacienda+La+Palma+Chimalhuacan" target="_blank">VER UBICACIÓN</a></div></div><script>const f=new Date("Oct 31, 2026 17:40:00").getTime();setInterval(()=>{let d=f-new Date().getTime();document.getElementById("c").innerHTML=`<div><b>${Math.floor(d/86400000)}</b><br>Días</div><div><b>${Math.floor(d%86400000/3600000)}</b><br>Hrs</div><div><b>${Math.floor(d%3600000/60000)}</b><br>Min</div><div><b>${Math.floor(d%60000/1000)}</b><br>Seg</div>`},1000)</script></body></html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alfredo & Jackeline - Nuestra Boda</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:#fffcf8;color:#4a3b2a;overflow-x:hidden}
+.sobre{position:fixed;inset:0;background:linear-gradient(#fdf6ec,#f5e9d6);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform 1s ease}
+.sobre.abierto{transform:translateY(-100%)}
+.sobre h2{font-family:'Great Vibes',cursive;font-size:3.5rem;color:#8b6a4f}
+.btn-abrir{margin-top:25px;padding:15px 35px;background:#8b6a4f;color:#fff;border:none;border-radius:30px;letter-spacing:3px;font-size:.9rem;cursor:pointer}
+.music{position:fixed;bottom:20px;right:20px;z-index:100;width:48px;height:48px;background:#8b6a4f;color:#fff;border-radius:50%;border:none;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.2)}
+.hero{height:100vh;background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url('foto.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+.hero h1{font-family:'Great Vibes',cursive;font-size:4.2rem;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.hero p{letter-spacing:5px;margin-bottom:10px}
+.sec{padding:50px 25px;text-align:center;max-width:600px;margin:0 auto}
+.titulo{font-family:'Great Vibes',cursive;font-size:2.8rem;color:#8b6a4f;margin-bottom:15px}
+.btn-wsp{display:inline-block;margin-top:20px;background:#25D366;color:#fff;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+
+<div id="sobre" class="sobre">
+<h2>Alfredo & Jackeline</h2>
+<p style="letter-spacing:4px;margin-top:10px;font-size:.9rem">NUESTRA BODA</p>
+<button class="btn-abrir" onclick="abrirInvitacion()">ABRIR INVITACIÓN</button>
+<p style="margin-top:15px;font-size:.7rem;opacity:.6">♫ Flightless Bird, American Mouth</p>
+</div>
+
+<button class="music" id="btnM" onclick="toggleM()">♫</button>
+<audio id="audio" loop preload="auto" src="musica.mp3"></audio>
+
+<div class="hero">
+<div>
+<p>¡NOS CASAMOS!</p>
+<h1>Alfredo<br>& Jackeline</h1>
+<p style="margin-top:15px;font-size:.9rem">21 • 12 • 2025</p>
+</div>
+</div>
+
+<div class="sec">
+<div class="titulo">Estás Invitado</div>
+<p>Con la bendición de Dios y el amor que nos une, queremos que nos acompañes en este día tan especial.</p>
+<br><br>
+<div class="titulo" style="font-size:2rem">Nuestra Historia</div>
+<p>Todo comenzó con una mirada, ahora continúa para siempre...</p>
+<br><br>
+<a class="btn-wsp" href="https://wa.me/5210000000000?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Alfredo%20y%20Jackeline%20💍">Confirmar Asistencia</a>
+<br><br><p style="font-size:.8rem;opacity:.7;margin-top:20px">Cambia el número de WhatsApp en el código por el tuyo</p>
+</div>
+
+<script>
+let play=false;
+function abrirInvitacion(){
+document.getElementById('sobre').classList.add('abierto');
+let a=document.getElementById('audio');a.volume=0.8;
+a.play().then(()=>{play=true;document.getElementById('btnM').innerHTML='❚❚'}).catch(()=>{play=false;});
+}
+function toggleM(){
+let a=document.getElementById('audio');
+if(play){a.pause();document.getElementById('btnM').innerHTML='♫';play=false}
+else{a.play();document.getElementById('btnM').innerHTML='❚❚';play=true}
+}
+</script>
+</body>
+</html>
