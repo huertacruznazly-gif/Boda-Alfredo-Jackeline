@@ -15,42 +15,36 @@ body { margin:0; font-family: serif; background-color: #58181F; color: #F9E6C8; 
 </head>
 <body>
 
-<!-- 1. FRASE DE BIENVENIDA -->
+<!-- 1. BIENVENIDA -->
 <div class="seccion" style="height: 90vh; display:flex; flex-direction:column; justify-content:center;">
-  <p style="font-size:13px; letter-spacing:2px; opacity:0.9; margin-bottom:15px; line-height:1.6;">
-    CON LA BENDICIÓN DE DIOS, NUESTROS PADRES<br>Y EL AMOR DE NUESTRA FAMILIA
-  </p>
+  <p style="font-size:13px; letter-spacing:2px; opacity:0.9; line-height:1.6;">CON LA BENDICIÓN DE DIOS, NUESTROS PADRES<br>Y EL AMOR DE NUESTRA FAMILIA</p>
   <p style="font-size:45px; margin:10px 0;">💍</p>
   <h2 style="font-style: italic; font-family: cursive; font-size: 23px; line-height: 1.5; max-width:330px; margin: 0 auto;">
     "Hay momentos especiales por sí solos, pero compartirlos con ustedes los hace inolvidables"
   </h2>
-  <p style="font-size: 16px; margin-top: 25px; line-height: 1.4; max-width: 300px; margin-left: auto; margin-right: auto; color: #E8C39E;">
+  <p style="font-size: 16px; margin-top: 25px; max-width: 300px; margin-left: auto; margin-right: auto; color: #E8C39E;">
     Te invito a celebrar conmigo en este día tan especial para mí
   </p>
   <p style="letter-spacing: 5px; margin-top:35px; font-size:16px; font-weight:bold;">ALFREDO & JACKELINE</p>
-  <p style="font-size:11px; opacity:0.5; margin-top:40px;">↓ desliza ↓</p>
 </div>
 
-<!-- 2. FOTO DE NOVIOS -->
+<!-- 2. FOTO -->
 <div class="seccion" style="background-color: #FFF8F0; color: #58181F;">
   <h2 class="titulo" style="color:#58181F;">¡Nos Casamos!</h2>
   <img src="foto.jpg" class="foto-novios">
   <p style="margin-top:25px; font-size:20px;">31 de Octubre de 2026</p>
 </div>
 
-<!-- 3. CUENTA REGRESIVA -->
+<!-- 3. CUENTA -->
 <div class="seccion">
   <h2 class="titulo">Faltan</h2>
   <div id="cuenta">Cargando...</div>
-  <p style="font-size:14px; opacity:0.8;">para nuestro gran día</p>
 </div>
 
 <!-- 4. PADRINOS -->
 <div class="seccion" style="background-color: #FFF8F0; color: #58181F;">
   <h2 class="titulo" style="color:#58181F;">Nuestros Padrinos</h2>
-  <p style="font-size: 22px; line-height: 1.5; margin-top:15px;">
-    Eduardo Navarrete<br>&<br>Patricia Hernández
-  </p>
+  <p style="font-size: 22px; line-height: 1.5;">Eduardo Navarrete<br>&<br>Patricia Hernández</p>
 </div>
 
 <!-- 5. MISA -->
@@ -71,25 +65,8 @@ body { margin:0; font-family: serif; background-color: #58181F; color: #F9E6C8; 
   <a class="boton" style="background:#58181F; color:#fff;" href="https://maps.google.com/?q=Hacienda+La+Palma" target="_blank">Ver Ubicación</a>
 </div>
 
-<!-- 7. FRASE FINAL -->
-<div class="seccion" style="padding-bottom: 80px;">
-  <p style="font-size:30px;">🕊️</p>
-  <p style="font-style: italic; font-size: 18px; line-height:1.5; max-width:300px; margin: 20px auto 0 auto; color:#E8C39E;">
-    "En memoria de quienes nos cuidan desde el cielo, su amor vive eternamente en nuestros corazones"
-  </p>
-  <p style="margin-top:40px; letter-spacing:4px; font-size:13px;">¡TE ESPERAMOS!</p>
-</div>
-
-<script>
-var fechaBoda = new Date("Oct 31, 2026 18:00:00").getTime();
-setInterval(function() {
-  var ahora = new Date().getTime();
-  var distancia = fechaBoda - ahora;
-  var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-  var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  if(distancia < 0){ document.getElementById("cuenta").innerHTML = "¡Hoy es el gran día!"; } 
-  else { document.getElementById("cuenta").innerHTML = dias + " días " + horas + " hrs"; }
-}, 1000);
-</script>
-</body>
-</html>
+<!-- 7. CONFIRMAR ASISTENCIA - NUEVO -->
+<div class="seccion">
+  <p style="font-size:40px;">💌</p>
+  <h2 class="titulo">Confirma tu Asistencia</h2>
+  <p style="font-size:16px; max-width:280px; margin:15px auto; line-height:1.4;">Tu presencia es muy importante para nosotros,
