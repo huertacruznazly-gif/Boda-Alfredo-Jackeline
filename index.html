@@ -18,7 +18,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 #countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .time-box{background:white;padding:18px 10px;border-radius:14px;min-width:75px}
 .time-box span{display:block;font-size:2rem;font-weight:600;color:var(--vino)}
-.seccion{padding:90px 20px;color:white;text-align:center}
+.seccion{padding:90px 20px;color:white;text-align:center;background-size:cover;background-position:center}
 .btn{display:inline-block;margin-top:25px;padding:14px 32px;border-radius:30px;text-decoration:none;font-weight:600;letter-spacing:2px;font-size:0.8rem}
 .btn-maps{background:var(--beige);color:var(--vino)}
 .btn-vino{background:var(--vino);color:white}
@@ -52,14 +52,12 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 <div id="countdown"><div class="time-box"><span id="days">00</span><small>DÍAS</small></div><div class="time-box"><span id="hours">00</span><small>HORAS</small></div><div class="time-box"><span id="mins">00</span><small>MIN</small></div><div class="time-box"><span id="secs">00</span><small>SEG</small></div></div>
 </section>
 
-<section class="seccion" style="background:linear-gradient(rgba(92,26,42,0.75),rgba(92,26,42,0.6)),url('https://images.unsplash.com/photo-1544531585-9847b68c8c86') center/cover">
+<!-- 1. CEREMONIA -->
+<section class="seccion" style="background:linear-gradient(rgba(92,26,42,0.82),rgba(92,26,42,0.55)),url('https://images.unsplash.com/photo-1511910849309-0dffb8785146') center/cover">
 <h2 class="great" style="font-size:3.2rem">Ceremonia</h2><div class="divider" style="background:var(--beige)"></div><p>Sábado 31 de Octubre - 5:45 PM</p><a class="btn btn-maps" href="https://maps.app.goo.gl/UJjCsPdYsgp56EMs7?g_st=ac" target="_blank">VER UBICACIÓN IGLESIA</a>
 </section>
 
-<section class="seccion" style="background:linear-gradient(rgba(60,15,25,0.8),rgba(92,26,42,0.6)),url('https://images.unsplash.com/photo-1519225421980-715cb0215aed') center/cover">
-<h2 class="great" style="font-size:3.2rem">Recepción</h2><div class="divider" style="background:var(--beige)"></div><p style="font-size:1.3rem;font-weight:600">7:30 PM</p><a class="btn btn-maps" href="https://maps.app.goo.gl/7YPHMssY1GoK7Dwf9" target="_blank">VER UBICACIÓN RECEPCIÓN</a>
-</section>
-
+<!-- 2. PADRINOS JUSTO DESPUÉS DE CEREMONIA -->
 <section style="padding:80px 25px;text-align:center;background:white">
 <h2 style="letter-spacing:5px;font-size:0.9rem;color:var(--vino)">NUESTROS PADRINOS</h2>
 <div class="divider"></div>
@@ -69,6 +67,11 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 </div>
 </section>
 
+<!-- 3. RECEPCIÓN DESPUÉS -->
+<section class="seccion" style="background:linear-gradient(rgba(60,15,25,0.85),rgba(92,26,42,0.55)),url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a') center/cover">
+<h2 class="great" style="font-size:3.2rem">Recepción</h2><div class="divider" style="background:var(--beige)"></div><p style="font-size:1.3rem;font-weight:600">7:30 PM</p><a class="btn btn-maps" href="https://maps.app.goo.gl/7YPHMssY1GoK7Dwf9" target="_blank">VER UBICACIÓN RECEPCIÓN</a>
+</section>
+
 <section style="padding:70px 20px;text-align:center;background:var(--beige)">
 <h2 style="letter-spacing:4px;font-size:0.9rem;color:var(--vino)">CONFIRMA TU ASISTENCIA</h2><div class="divider"></div>
 <p class="serif" style="font-size:1.3rem;font-style:italic">Tu presencia es nuestro mejor regalo.</p>
@@ -76,7 +79,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 <p style="margin-top:20px;font-size:0.85rem">WhatsApp: 56 2156 1398</p>
 </section>
 
-<!-- FRASE EN MEMORIA -->
 <section style="padding:80px 25px;text-align:center;background:var(--vino);color:var(--beige)">
 <div style="font-size:2.5rem;margin-bottom:20px">🕊️</div>
 <h2 class="great" style="font-size:2.6rem;color:var(--beige2)">En memoria de quienes nos cuidan desde el cielo</h2>
@@ -86,21 +88,4 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 </section>
 
 <section style="padding:90px 25px;text-align:center;background:var(--beige2)">
-<h2 class="great" style="font-size:2.8rem;color:var(--vino)">Gracias por ser parte de nuestra historia</h2><div class="divider"></div>
-<p class="serif" style="font-style:italic;font-size:1.2rem">"El amor es paciente, es bondadoso. El amor todo lo puede."</p>
-<p style="margin-top:40px;letter-spacing:6px;font-weight:600;color:var(--vino)">A & J</p><p style="margin-top:10px;font-size:0.7rem;letter-spacing:3px">31 . 10 . 26</p>
-</section>
-
-<script>
-const weddingDate=new Date("Oct 31, 2026 17:45:00").getTime();
-setInterval(()=>{
-const now=new Date().getTime();const d=weddingDate-now;
-if(d<0){document.getElementById("countdown").innerHTML="<p class='great' style='font-size:2.2rem;color:#5C1A2A'>¡Hoy es el gran día!</p>";return}
-document.getElementById("days").innerHTML=Math.floor(d/(1000*60*60*24));
-document.getElementById("hours").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60));
-document.getElementById("mins").innerHTML=Math.floor((d%(1000*60*60))/(1000*60));
-document.getElementById("secs").innerHTML=Math.floor((d%(1000*60))/1000);
-},1000);
-</script>
-</body>
-</html>
+<h2 class="great" style="font-size:2.8rem;color:var(--vino)">Gracias por ser parte de
