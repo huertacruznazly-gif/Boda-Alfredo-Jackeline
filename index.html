@@ -16,26 +16,32 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 .marco{width:310px;height:420px;margin:auto;background-image:url('foto.jpg');background-size:cover;background-position:center top;border-radius:200px 200px 20px 20px;box-shadow:0 15px 40px rgba(92,26,42,0.3);border:8px solid white}
 .contador{background:var(--beige2);padding:60px 20px;text-align:center}
 #countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.time-box{background:white;padding:18px 10px;border-radius:14px;min-width:75px}
-.time-box span{display:block;font-size:2rem;font-weight:600;color:var(--vino)}
+.time-box{background:white;padding:18px 10px;border-radius:14px;min-width:75px;box-shadow:0 5px 15px rgba(0,0,0,0.05)}
+.time-box span{display:block;font-size:2rem;font-weight:700;color:var(--vino)}
 .seccion{padding:90px 20px;color:white;text-align:center;background-size:cover;background-position:center}
 .btn{display:inline-block;margin-top:25px;padding:14px 32px;border-radius:30px;text-decoration:none;font-weight:600;letter-spacing:2px;font-size:0.8rem}
 .btn-maps{background:var(--beige);color:var(--vino)}
 .btn-vino{background:var(--vino);color:white}
 .divider{width:80px;height:1px;background:var(--vino);margin:25px auto}
-.musica{position:fixed;bottom:20px;right:20px;background:var(--vino);color:white;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999}
+.musica{position:fixed;bottom:20px;right:20px;background:var(--vino);color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 5px 20px rgba(92,26,42,0.4);font-size:1.4rem;animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
 .padrino-card{background:var(--beige);padding:30px;border-radius:15px;max-width:400px;margin:0 auto;box-shadow:0 10px 30px rgba(92,26,42,0.1)}
 </style>
 </head>
 <body>
-<audio id="bgMusic" loop><source src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_5a9d9e11a6.mp3?filename=beautiful-piano-115656.mp3" type="audio/mpeg"></audio>
-<div class="musica" onclick="let a=document.getElementById('bgMusic');a.paused?a.play():a.pause();this.innerHTML=a.paused?'🎵':'⏸️'">🎵</div>
+
+<!-- MUSICA NUEVA QUE SI FUNCIONA -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_8c8a64d47f.mp3?filename=romantic-wedding-115359.mp3" type="audio/mpeg">
+</audio>
+<div class="musica" id="musicBtn" onclick="let a=document.getElementById('bgMusic'); if(a.paused){a.play(); this.innerHTML='⏸️';}else{a.pause(); this.innerHTML='🎵';}">🎵</div>
 
 <section class="portada">
 <p class="serif" style="letter-spacing:4px;font-size:0.85rem;margin-bottom:25px">HAY UN MOMENTO EN LA VIDA...</p>
 <h1 class="great" style="font-size:4.8rem">Nuestra Boda</h1>
 <div style="letter-spacing:5px;margin-top:20px;border-top:1px solid rgba(249,241,231,0.5);border-bottom:1px solid rgba(249,241,231,0.5);padding:12px 0">ALFREDO & JACKELINE</div>
 <p style="margin-top:25px;letter-spacing:3px">31 . 10 . 2026</p>
+<p style="margin-top:15px;font-size:0.7rem;opacity:0.8">🔊 Toca el botón de música</p>
 </section>
 
 <div class="frase">
@@ -49,15 +55,13 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 <section class="contador">
 <h2 style="letter-spacing:5px;font-size:0.9rem;color:var(--vino)">FALTAN</h2>
 <div class="great" style="font-size:2.2rem;color:var(--vino);margin-bottom:25px">31 de Octubre 2026</div>
-<div id="countdown"><div class="time-box"><span id="days">00</span><small>DÍAS</small></div><div class="time-box"><span id="hours">00</span><small>HORAS</small></div><div class="time-box"><span id="mins">00</span><small>MIN</small></div><div class="time-box"><span id="secs">00</span><small>SEG</small></div></div>
+<div id="countdown"><div class="time-box"><span id="days">--</span><small>DÍAS</small></div><div class="time-box"><span id="hours">--</span><small>HORAS</small></div><div class="time-box"><span id="mins">--</span><small>MIN</small></div><div class="time-box"><span id="secs">--</span><small>SEG</small></div></div>
 </section>
 
-<!-- 1. CEREMONIA -->
-<section class="seccion" style="background:linear-gradient(rgba(92,26,42,0.82),rgba(92,26,42,0.55)),url('https://images.unsplash.com/photo-1511910849309-0dffb8785146') center/cover">
+<section class="seccion" style="background:linear-gradient(rgba(92,26,42,0.85),rgba(92,26,42,0.6)),url('https://images.unsplash.com/photo-1436397543931-01c1a5121a93?q=80&w=800') center/cover">
 <h2 class="great" style="font-size:3.2rem">Ceremonia</h2><div class="divider" style="background:var(--beige)"></div><p>Sábado 31 de Octubre - 5:45 PM</p><a class="btn btn-maps" href="https://maps.app.goo.gl/UJjCsPdYsgp56EMs7?g_st=ac" target="_blank">VER UBICACIÓN IGLESIA</a>
 </section>
 
-<!-- 2. PADRINOS JUSTO DESPUÉS DE CEREMONIA -->
 <section style="padding:80px 25px;text-align:center;background:white">
 <h2 style="letter-spacing:5px;font-size:0.9rem;color:var(--vino)">NUESTROS PADRINOS</h2>
 <div class="divider"></div>
@@ -67,8 +71,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 </div>
 </section>
 
-<!-- 3. RECEPCIÓN DESPUÉS -->
-<section class="seccion" style="background:linear-gradient(rgba(60,15,25,0.85),rgba(92,26,42,0.55)),url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a') center/cover">
+<section class="seccion" style="background:linear-gradient(rgba(60,15,25,0.85),rgba(92,26,42,0.6)),url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800') center/cover">
 <h2 class="great" style="font-size:3.2rem">Recepción</h2><div class="divider" style="background:var(--beige)"></div><p style="font-size:1.3rem;font-weight:600">7:30 PM</p><a class="btn btn-maps" href="https://maps.app.goo.gl/7YPHMssY1GoK7Dwf9" target="_blank">VER UBICACIÓN RECEPCIÓN</a>
 </section>
 
@@ -84,8 +87,40 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 <h2 class="great" style="font-size:2.6rem;color:var(--beige2)">En memoria de quienes nos cuidan desde el cielo</h2>
 <div class="divider" style="background:var(--beige2)"></div>
 <p class="serif" style="font-size:1.1rem;font-style:italic;opacity:0.9;max-width:500px;margin:20px auto">Aunque no puedan estar físicamente con nosotros, los llevamos en el corazón en este día tan especial. Su amor nos guía.</p>
-<div style="margin-top:30px;font-size:1.2rem">🕯️</div>
 </section>
 
 <section style="padding:90px 25px;text-align:center;background:var(--beige2)">
-<h2 class="great" style="font-size:2.8rem;color:var(--vino)">Gracias por ser parte de
+<h2 class="great" style="font-size:2.8rem;color:var(--vino)">Gracias por ser parte de nuestra historia</h2><div class="divider"></div>
+<p class="serif" style="font-style:italic;font-size:1.2rem">"El amor es paciente, es bondadoso. El amor todo lo puede."</p>
+<p style="margin-top:40px;letter-spacing:6px;font-weight:600;color:var(--vino)">A & J</p><p style="margin-top:10px;font-size:0.7rem;letter-spacing:3px">31 . 10 . 26</p>
+</section>
+
+<script>
+const weddingDate = new Date(2026, 9, 31, 17, 45, 0).getTime();
+function updateCountdown(){
+  const now = new Date().getTime();
+  const d = weddingDate - now;
+  if(d < 0){
+    document.getElementById("countdown").innerHTML="<p class='great' style='font-size:2.2rem;color:#5C1A2A'>¡Hoy es el gran día!</p>";
+    return;
+  }
+  document.getElementById("days").innerHTML=Math.floor(d/(1000*60*60*24));
+  document.getElementById("hours").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+  document.getElementById("mins").innerHTML=Math.floor((d%(1000*60*60))/(1000*60));
+  document.getElementById("secs").innerHTML=Math.floor((d%(1000*60))/1000);
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+// Intentar reproducir al primer toque en cualquier parte
+document.body.addEventListener('click', function firstPlay(){
+  let a=document.getElementById('bgMusic');
+  if(a.paused){
+    a.play().catch(()=>{});
+    document.getElementById('musicBtn').innerHTML='⏸️';
+  }
+  document.body.removeEventListener('click', firstPlay);
+}, {once:true});
+</script>
+</body>
+</html>
