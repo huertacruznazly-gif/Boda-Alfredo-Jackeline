@@ -30,10 +30,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--beige);color:#4a4a4a}
 </head>
 <body>
 
-<!-- MUSICA NUEVA QUE SI FUNCIONA -->
-<audio id="bgMusic" loop preload="auto">
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_8c8a64d47f.mp3?filename=romantic-wedding-115359.mp3" type="audio/mpeg">
-</audio>
+<!-- MUSICA CORREGIDA - TU ARCHIVO IRON & WINE -->
+<audio id="bgMusic" loop preload="auto" src="musica.mp3"></audio>
 <div class="musica" id="musicBtn" onclick="let a=document.getElementById('bgMusic'); if(a.paused){a.play(); this.innerHTML='⏸️';}else{a.pause(); this.innerHTML='🎵';}">🎵</div>
 
 <section class="portada">
@@ -111,8 +109,6 @@ function updateCountdown(){
 }
 setInterval(updateCountdown,1000);
 updateCountdown();
-
-// Intentar reproducir al primer toque en cualquier parte
 document.body.addEventListener('click', function firstPlay(){
   let a=document.getElementById('bgMusic');
   if(a.paused){
